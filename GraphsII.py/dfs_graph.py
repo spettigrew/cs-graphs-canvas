@@ -43,3 +43,29 @@ DFS_visit(v):
             DFS_visit(neighbor)
     # when done exploring all the neighbors, mark the vert as black (visited)
     v.color = black
+
+
+    # ---------------- Notes from class ----------------------------
+    """
+    All Paths from start to target
+
+    DFS pseudocode -- input parameters: graph (vertices, edges), 
+    starting vertex, target (for search)
+
+    Things we know about DFS
+        - we need some way to keep track of visited
+            - Iterative
+            - All paths --> need an array to store them 
+            - Keep track of current path as we traverse
+
+            - Start at starting vertex (push it onto 'to_visit')
+            - Current = the next node that we need to remove from 'to_visit
+            - Check if the current vertx is our target
+                - if it is: ?? (go through the loop again) We need to add the currenet path to all paths
+                - if it is not, we continue traversing 
+                    - Add the node to the current path
+            - Traverse: we want to add more nodes --> neighbors of current vertex
+                - Add nodes to stack of: to_vist nodes and visited set
+            - Keep looping
+            - Go as deep as possible
+    """
