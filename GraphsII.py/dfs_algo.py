@@ -77,7 +77,12 @@ class Graph:
         return self.vertices.keys()
 
     def depth_first_search(self, vertex, visited = set()):
+        #visit the vertex
         visited.add(vertex)
+        # go through every single one of the vertex's neighbor one at a time 
+        # and go a full DFS on it
         for next_vert in vertex.get_connections():
+            # check if it's not been visited, so we don't visit twice
             if next_vert not in visited:
+                # do a full DFS on that branch, until we reach the end of the branch.
                 self.depth_first_search(next_vert, visited)
